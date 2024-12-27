@@ -24,7 +24,7 @@ pub trait ILandOnboard<TContractState> {
         ref self: TContractState, landLocation: LandCoordinate,
     ) -> u256;
 
-    
+    fn get_lands(ref self: TContractState) -> Array<Land>;
 
 
 }

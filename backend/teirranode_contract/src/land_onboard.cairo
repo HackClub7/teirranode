@@ -6,7 +6,7 @@ use starknet::storage::StoragePointerWriteAccess;
 use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
     use core::array::ArrayTrait;
     use starknet::{
-        get_caller_address, get_contract_address, get_block_timestamp, ContractAddress, syscalls,
+        get_caller_address, get_contract_address, get_block_timestamp, ContractAddress,
         get_tx_info
     };
     use crate::interface::land_onboard::{
@@ -38,6 +38,7 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
         owner_lands: Map::<(ContractAddress, u256), u256>,
         land_count: u256,
         aggregate_owner_land: Map::<ContractAddress, u256>,
+        all_lands: Map::<u256, Land>,
     }
 
     #[abi(embed_v0)]
@@ -66,8 +67,23 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
             self.owner_lands.write((caller_entity, aggregate_owner_land), land_id);
             self.aggregate_owner_land.write(caller_entity, aggregate_owner_land + 1);
 
+            self.all_lands.write(self.land_count.read(), new_land);
+
             land_id
 
+        }
+
+        fn get_lands(ref self: ContractState) -> Array<Land> {
+            let mut lands_array = ArrayTrait::new();
+
+            let land_count = self.land_count.read();
+
+            for i in 0..land_count {
+                let land = self.all_lands.read(i);
+                lands_array.append(land);
+            };
+
+            lands_array
         }
     }
 }
