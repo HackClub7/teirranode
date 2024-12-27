@@ -1,7 +1,6 @@
 "use client"
 import SideMenue from "../components/SideMenu"
 import TopMenu from "../components/TopMenu"
-// import userImage from "public/assets/user-image.jpeg"
 import logos from "public/assets/logoss.png"
 import Image from "next/image";
 import UserLands from "../components/UserLands"
