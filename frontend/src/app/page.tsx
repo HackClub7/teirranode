@@ -17,7 +17,8 @@
 export default function Home() {
   return (
     <main className="flex min-h-svh flex-col justify-between gap-16">
-
+      <h1>Revolutionizing Land Ownership with Blockchain</h1>
+      <p></p>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+"use client"
 import SideMenue from "../components/SideMenu"
 import TopMenu from "../components/TopMenu"
 // import userImage from "public/assets/user-image.jpeg"

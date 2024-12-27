@@ -70,7 +70,7 @@ export default function UserLands() {
                                 Plateau State land
                             </td>
                             <td className="p-3">
-                                <span className="font-semibold">DK</span> Debby Kay
+                                <span className="font-semibold bg-gray-200 p-1 rounded-full">DK</span> Debby Kay
                             </td>
                             <td className="p-3">Dec 25, 09:01 PM</td>
                             <td className="p-3">20Eth</td>
@@ -87,7 +87,7 @@ export default function UserLands() {
                                 Plateau State land
                             </td>
                             <td className="p-3">
-                                <span className="font-semibold">DK</span> Debby Kay
+                                <span className="font-semibold bg-gray-200 p-1 rounded-full">DK</span> Debby Kay
                             </td>
                             <td className="p-3">Dec 25, 09:01 PM</td>
                             <td className="p-3">20Eth</td>
