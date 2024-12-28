@@ -10,7 +10,7 @@ export default function SideMenue(){
     return(
         <div className="bg-[#22331D] text-white p-5 min-h-svh w-[22%]">
             <Logo/>
-            <div className=" flex flex-col">
+            <div className=" flex flex-col pt-10">
                 <ul className="flex flex-col gap-7 text-sm">
                     <li><Link href={"/"} className="flex gap-3"> <GoHomeFill className="inline text-lg"/>Home</Link></li>
                     <li><Link href={"/"} className="flex gap-3"> <BiSolidLandscape  className="inline text-lg"/>Lands</Link></li>
