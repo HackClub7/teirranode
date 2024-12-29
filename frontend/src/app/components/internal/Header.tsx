@@ -35,7 +35,7 @@ const Header = () => {
   // }, []);
 
   return (
-    <div className="flex justify-between px-32 py-5 shadow-xl f w-full"> 
+    <div className="flex justify-between lg:px-32 px-7 py-5 shadow-xl f w-full"> 
       <Logo />
       {/* <div className="self-center">
         <ul className="flex gap-7 text-sm">
@@ -45,7 +45,7 @@ const Header = () => {
           <li><Link href={'/'} className="hover:text-[#F65A11]">Licensing</Link></li>
         </ul>
       </div> */}
-      <button className="bg-[#22331D] text-white text-sm py-2 px-3 rounded hover:bg-[#F65A11]">Connect wallet</button>
+      <button className="bg-[#22331D] text-white lg:text-sm text-xs lg:py-2 lg:px-3 px-2 py-1 rounded hover:bg-[#F65A11]">Connect wallet</button>
     </div>
     // <div
     //   onFocusCapture={(e) =>
