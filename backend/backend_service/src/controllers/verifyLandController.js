@@ -1,12 +1,16 @@
 const lands = require('../data/lands');
 
 exports.verifyLands = async (req, res) => {
-    const { land_id, registration_no } = req.body;
+    const { title_id, registration_no } = req.body;
+
+    if (!title_id || !registration_no) {
+        return res.status(400).json({ error: "title_id and registration_no are required" });
+    }
 
     try {
         const land = lands.find(
             (m) =>
-                m.land_id.toLowerCase() === land_id.toLowerCase() &&
+                m.title_id.toLowerCase() === title_id.toLowerCase() &&
                 m.registration_no === registration_no
         );
 
