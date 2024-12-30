@@ -10,7 +10,7 @@ export default function UserLands(){
     return (
         <div className="bg-[#EFEDE7] text-black">
         <Header />
-        <div className="xl:px-32 px-10 lg:24 pt-10">
+        <div className="xl:px-32 px-10 lg:px-24 pt-10">
             <div className="min-h-svh ">
                 <h1 className="lg:text-[1.7rem] text-xl font-semibold mb-5 ">My Lands</h1>
                 <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">

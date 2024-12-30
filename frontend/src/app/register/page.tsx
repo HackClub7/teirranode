@@ -4,13 +4,15 @@
 import { FiUploadCloud } from "react-icons/fi";
 import Header from "../components/internal/Header";
 // import Logo from "../components/Logo";
+import landingImage from "../../../public/assets/point3d-commercial-imaging-ltd-mYXDtOxxuJo-unsplash.jpg"
 
 export default function Register() {
     return (
         <div className="text-black">
             <Header />
-            <div className=" min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover "
+            <div className=" min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7]  bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60 "
             //style={{backgroundImage: `url(${bgImage.src})`}}
+            style={{backgroundImage: `url(${landingImage.src})`}}
             >
                 
                 <div className="w-full">
