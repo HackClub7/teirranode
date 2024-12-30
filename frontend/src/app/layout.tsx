@@ -6,9 +6,9 @@ import { Analytics } from "./components/internal/Analytics";
 import Dashboard from "./dashboard/page";
 
 export const metadata: Metadata = {
-  title: "Starknet Scaffold",
-  description:
-    "Build pixel-perfect dApps on Starknet with our modern, streamlined Starknet-Scaffold. Featuring NextJS, Starknetjs, Starknetkit, Starknet-React, and Typescript, it’s fully equipped for Scarb and Starknet Foundry contract development. Simplify your workflow and focus on innovation. Starknet scaffold is an open-source, up-to-date toolkit for building decentralized applications (dapps) on Starknet.",
+  title: "TierraNode",
+  // description:
+  //   "Build pixel-perfect dApps on Starknet with our modern, streamlined Starknet-Scaffold. Featuring NextJS, Starknetjs, Starknetkit, Starknet-React, and Typescript, it’s fully equipped for Scarb and Starknet Foundry contract development. Simplify your workflow and focus on innovation. Starknet scaffold is an open-source, up-to-date toolkit for building decentralized applications (dapps) on Starknet.",
   // openGraph: {
   //   title: "Starknet Scaffold",
   //   description:
