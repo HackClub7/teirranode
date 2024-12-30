@@ -5,11 +5,10 @@ import landImage from "../../../public/assets/point3d-commercial-imaging-ltd-mYX
 import ownerImage from "../../../public/assets/user-image.jpeg"
 import { FaEthereum } from "react-icons/fa";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import ChainTitle from "../components/ChainTitle";
 import { useState } from "react";
 
 
-export default function LandDetails() {
+export default function UserLandDetails() {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +18,7 @@ export default function LandDetails() {
     return (
         <div className="text-black">
             <Header />
-            <div className="py-10 border-b lg:px-32 px-10">
+            <div className="lg:px-32 px-10 min-h-svh flex items-center">
                 <div className="grid lg:grid-cols-2 xl:gap-14 lg:gap-7 gap-14">
                     <div>
                         <Image src={landImage} alt="" />
@@ -42,7 +41,7 @@ export default function LandDetails() {
                         <p className="text-base pt-3 font-semibold self-center"><FaEthereum className="inline mr-1" />10 eth</p>
                         {/* </div> */}
                         <div className="flex justify-between xl:pt-5 lg:pt-2 pt-5">
-                            <div><button className="bg-[#F65A11] hover:bg-[#22331D] text-white text-sm py-2 px-3 rounded" onClick={openModal}>Buy Land</button></div>
+                            <div><button className="bg-[#F65A11] hover:bg-[#22331D] text-white text-sm py-2 px-3 rounded" onClick={openModal}>List Land</button></div>
                             <p className="pt-3 text-xs text-slate-400">Last updated: <span className="">October 6, 2025</span></p>
                         </div>
                     </div>
@@ -54,7 +53,7 @@ export default function LandDetails() {
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white lg:w-1/3 rounded shadow-lg p-6 relative">
                         
-                        <p className="text-black mb-6">Do you want to buy this land?</p>
+                        <p className="text-black mb-6">Do you want to list this land?</p>
 
                         <div className="flex justify-end gap-2">
                             <button
@@ -73,7 +72,6 @@ export default function LandDetails() {
                     </div>
                 </div>
             )}
-            <ChainTitle />
         </div>
     )
 }
