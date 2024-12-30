@@ -45,7 +45,9 @@ const Header = () => {
           <li><Link href={'/'} className="hover:text-[#F65A11]">Licensing</Link></li>
         </ul>
       </div> */}
-      <button className="bg-[#22331D] text-white lg:text-sm text-xs lg:py-2 lg:px-3 px-2 py-1 rounded hover:bg-[#F65A11]">Connect wallet</button>
+         <ConnectButton />
+      {/* <button className="bg-[#22331D] text-white text-sm py-2 px-3 rounded hover:bg-[#F65A11]">Connect wallet</button> */}
+
     </div>
     // <div
     //   onFocusCapture={(e) =>
@@ -76,7 +78,7 @@ const Header = () => {
     //             <MenuButton />
     //           </div>
     //         ) : (
-    //           <ConnectButton />
+              // <ConnectButton />
     //         )}
     //         <ThemeSwitch
     //           className="absolute bottom-[-200%] left-3/4 md:grid lg:bottom-[-250%] lg:left-1/2"

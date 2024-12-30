@@ -17,7 +17,9 @@ import Header from "./components/internal/Header";
 // import Header from "./components/internal/Header";
 // import AddTokenButton from "./components/lib/AddToken";
 
+
 export default function Home() {
+  
   return (
     <main className="min-h-svh text-black bg-[#EFEDE7]">
       <Header />

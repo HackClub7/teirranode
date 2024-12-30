@@ -87,17 +87,24 @@ const ConnectModal = () => {
         <div className="flex flex-1 flex-col justify-between lg:grid lg:grid-cols-5">
           <div className="lg:border-outline-grey px-8 lg:col-span-2 lg:h-full lg:border-r-[1px] lg:border-solid">
             <h4 className="text-text-grey mb-[1rem] font-semibold">Popular</h4>
-
             <div className="flex flex-col gap-4 py-8">
-              {connectors.map((connector, index) => (
-                <Wallet
-                  key={connector.id || index}
-                  src={connector.icon.light!}
-                  name={connector.name}
-                  connector={connector}
-                  alt="alt"
-                />
-              ))}
+              {connectors.map((connector, index) => {
+                const iconSrc =
+                  typeof connector.icon === "object" &&
+                  "light" in connector.icon
+                    ? connector.icon.light
+                    : connector.icon;
+
+                return (
+                  <Wallet
+                    key={connector.id || index}
+                    src={iconSrc}
+                    name={connector.name}
+                    connector={connector}
+                    alt="Wallet icon"
+                  />
+                );
+              })}
             </div>
           </div>
           <div className="border-red h-fit border-t-[.5px] border-solid p-4 lg:col-span-3 lg:flex lg:h-full lg:flex-col lg:border-none lg:px-8 lg:py-0">
