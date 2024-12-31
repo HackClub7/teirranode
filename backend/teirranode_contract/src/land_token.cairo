@@ -2,16 +2,16 @@ use starknet::ContractAddress;
 
 #[starknet::interface]
 pub trait IShaaibuToken<TContractState> {
-   fn mint(ref self: TContractState, recipient: ContractAddress, amount: u256);
+    fn mint(ref self: TContractState, recipient: ContractAddress, amount: u256);
 }
 
 /// Simple contract for managing balance.
 #[starknet::contract]
 mod ShaaibuToken {
     use ERC20Component::InternalTrait;
-use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
+    use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
     use starknet::ContractAddress;
-    use openzeppelin::token::erc20::{ ERC20Component, ERC20HooksEmptyImpl };
+    use openzeppelin::token::erc20::{ERC20Component, ERC20HooksEmptyImpl};
 
     component!(path: ERC20Component, storage: erc20, event: Erc20Event);
 
@@ -23,7 +23,7 @@ use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAcces
 
     #[event]
     #[derive(Drop, starknet::Event)]
-    enum Event{
+    enum Event {
         #[flat]
         Erc20Event: ERC20Component::Event,
     }
@@ -37,7 +37,6 @@ use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAcces
     impl ERC20Impl = ERC20Component::ERC20MixinImpl<ContractState>;
 
     impl Erc20InternalImpl = ERC20Component::InternalImpl<ContractState>;
-
 
 
     #[abi(embed_v0)]

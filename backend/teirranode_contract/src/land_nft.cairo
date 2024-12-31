@@ -73,10 +73,7 @@ mod TierraNode {
 
         #[external(v0)]
         fn safeMint(
-            ref self: ContractState,
-            recipient: ContractAddress,
-            tokenId: u256,
-            data: Span<felt252>,
+            ref self: ContractState, recipient: ContractAddress, tokenId: u256, data: Span<felt252>,
         ) {
             self.safe_mint(recipient, tokenId, data);
         }
@@ -85,7 +82,7 @@ mod TierraNode {
     //
     // Upgradeable
     //
-    
+
     #[abi(embed_v0)]
     impl UpgradeableImpl of IUpgradeable<ContractState> {
         fn upgrade(ref self: ContractState, new_class_hash: ClassHash) {

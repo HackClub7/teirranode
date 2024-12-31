@@ -5,11 +5,16 @@ import Header from "../components/internal/Header";
 
 export default function Register() {
     // State for input fields
-    const [formData, setFormData] = useState({
-        title: "",
-        landName: "",
-        landRegNumber: "",
-        location: "",
+    interface FormData {
+        title_id: string;
+        registration_no: string;
+      }
+      
+    const [formData, setFormData] = useState<FormData>({
+        title_id: "",
+        // landName: "",
+        registration_no: "",
+        // location: "",
     });
 
     const [file, setFile] = useState<File | null>(null);
@@ -30,25 +35,45 @@ export default function Register() {
     };
 
     // Function to handle form submission
-    const handleRegister = (e: React.FormEvent) => {
+    const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Validate inputs
-        if (!formData.title || !formData.landName || !formData.landRegNumber || !formData.location) {
+        const { title_id, registration_no } = formData
+        if (!title_id || !registration_no) {
             alert("Please fill in all fields.");
             return;
         }
 
+        try {
+            const response = await fetch("http://localhost:5000/verify", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({  title_id, registration_no }),
+            });
+      
+            const data = await response.json();
+      
+            if (response.ok) {
+              console.log("land exists", data)
+            } else {
+                console.log("error", data)
+            }
+          } catch (error) {
+            console.error("Error:", error);
+          }
+
+        // Validate inputs
         if (file && file.size > 5 * 1024 * 1024) {
             alert("File size exceeds 5MB.");
             return;
         }
 
         // Submit logic here
-        console.log("Form Data Submitted:", formData);
-        console.log("Uploaded File:", file);
+        // console.log("Form Data Submitted:", formData);
+        // console.log("Uploaded File:", file);
 
-        alert("Land registered successfully!");
+        // alert("Land registered successfully!");
     };
 
     return (
@@ -64,7 +89,7 @@ export default function Register() {
                             Register your land
                         </h2>
                         <div className="lg:grid lg:grid-cols-2 flex flex-col-reverse gap-10">
-                            <div className="border-2 border-dashed border-[#22331D] rounded-lg flex items-center justify-center py-5 lg:mb-0 mb-4">
+                        <div className="border-2 border-dashed border-[#22331D] rounded-lg flex items-center justify-center py-5 lg:mb-0 mb-4">
                                 <label
                                     htmlFor="landImage"
                                     className="text-sm text-[#22331D] flex flex-col items-center cursor-pointer"
@@ -85,21 +110,21 @@ export default function Register() {
                             </div>
                             <div>
                                 <div>
-                                    <label htmlFor="title" className="text-[#22331D] text-sm">
+                                    <label htmlFor="title_id" className="text-[#22331D] text-sm">
                                         Title
                                     </label>
                                     <div className="border border-gray-300 rounded mt-1 mb-3 px-3 py-1">
                                         <input
                                             type="text"
-                                            id="title"
-                                            name="title"
-                                            value={formData.title}
+                                            id="title_id"
+                                            name="title_id"
+                                            value={formData.title_id}
                                             onChange={handleChange}
                                             className="border-0 outline-0 bg-transparent"
                                         />
                                     </div>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <label htmlFor="landName" className="text-[#22331D] text-sm">
                                         Land name
                                     </label>
@@ -113,23 +138,23 @@ export default function Register() {
                                             className="border-0 outline-0 bg-transparent"
                                         />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div>
-                                    <label htmlFor="landRegNumber" className="text-[#22331D] text-sm">
+                                    <label htmlFor="resgistration_id" className="text-[#22331D] text-sm">
                                         Land Reg Number
                                     </label>
                                     <div className="border border-gray-300 rounded mt-1 mb-3 px-3 py-1">
                                         <input
                                             type="text"
-                                            id="landRegNumber"
-                                            name="landRegNumber"
-                                            value={formData.landRegNumber}
+                                            id="registration_no"
+                                            name="registration_no"
+                                            value={formData.registration_no}
                                             onChange={handleChange}
                                             className="border-0 outline-0 bg-transparent"
                                         />
                                     </div>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <label htmlFor="location" className="text-[#22331D] text-sm">
                                         Location
                                     </label>
@@ -143,7 +168,7 @@ export default function Register() {
                                             className="border-0 outline-0 bg-transparent"
                                         />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="lg:flex justify-center lg:justify-start hidden">
                                     <button
                                         type="submit"

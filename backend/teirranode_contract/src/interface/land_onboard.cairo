@@ -7,7 +7,7 @@ pub struct Land {
     pub land_id: u256,
     pub owner: ContractAddress,
     pub location: LandCoordinate,
-    pub status: bool, 
+    pub status: bool,
     pub title_no: felt252,
     pub registration_no: felt252,
     pub number_of_plots: u32,
@@ -25,7 +25,7 @@ pub struct LandCoordinate {
 #[starknet::interface]
 pub trait ILandOnboard<TContractState> {
     fn register_land(
-        ref self: TContractState, 
+        ref self: TContractState,
         landLocation: LandCoordinate,
         numberOfPlots: u32,
         titleDeed: felt252,
