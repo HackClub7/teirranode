@@ -45,7 +45,12 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
     impl LandOnbaord of ILandOnboard<ContractState> {
 
         fn register_land(
-            ref self: ContractState, landLocation: LandCoordinate
+            ref self: ContractState, 
+            landLocation: LandCoordinate,
+            numberOfPlots: u32,
+            titleDeed: felt252,
+            registrationNumber: felt252,
+            pricePerPlot: u256
         ) -> u256 {
             let caller_entity = get_caller_address();
 
@@ -57,6 +62,10 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
                 owner: caller_entity,
                 location: landLocation,
                 status: true,
+                title_no: titleDeed,
+                registration_no: registrationNumber,
+                number_of_plots: numberOfPlots,
+                price_per_plot: pricePerPlot,
                 last_transaction_timestamp: tx_count
             };
 
@@ -70,7 +79,6 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
             self.all_lands.write(self.land_count.read(), new_land);
 
             land_id
-
         }
 
         fn get_lands(ref self: ContractState) -> Array<Land> {
