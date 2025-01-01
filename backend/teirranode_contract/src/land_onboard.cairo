@@ -1,17 +1,13 @@
 #[starknet::contract]
 pub mod LandRegistryContract {
-
     use starknet::storage::StoragePointerReadAccess;
-use starknet::storage::StoragePointerWriteAccess;
-use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
+    use starknet::storage::StoragePointerWriteAccess;
+    use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
     use core::array::ArrayTrait;
     use starknet::{
-        get_caller_address, get_contract_address, get_block_timestamp, ContractAddress,
-        get_tx_info
+        get_caller_address, get_contract_address, get_block_timestamp, ContractAddress, get_tx_info
     };
-    use crate::interface::land_onboard::{
-        ILandOnboard, Land, LandCoordinate
-    };
+    use crate::interface::land_onboard::{ILandOnboard, Land, LandCoordinate};
     use core::poseidon::PoseidonTrait;
     use core::hash::{HashStateTrait, HashStateExTrait};
 
@@ -22,14 +18,14 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
             .update_with(location.latitude + location.longitude)
             .finalize();
 
-        let felt_land_id = caller_hash  + location_hash;
+        let felt_land_id = caller_hash + location_hash;
         let land_id: u256 = felt_land_id.into();
         land_id
     }
-    
+
 
     #[storage]
-    struct Storage { 
+    struct Storage {
         tokenAddress: ContractAddress,
         nftAddress: ContractAddress,
         plotBasePrice: u256,
@@ -43,9 +39,13 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
 
     #[abi(embed_v0)]
     impl LandOnbaord of ILandOnboard<ContractState> {
-
         fn register_land(
-            ref self: ContractState, landLocation: LandCoordinate
+            ref self: ContractState,
+            landLocation: LandCoordinate,
+            numberOfPlots: u32,
+            titleDeed: felt252,
+            registrationNumber: felt252,
+            pricePerPlot: u256
         ) -> u256 {
             let caller_entity = get_caller_address();
 
@@ -57,6 +57,10 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
                 owner: caller_entity,
                 location: landLocation,
                 status: true,
+                title_no: titleDeed,
+                registration_no: registrationNumber,
+                number_of_plots: numberOfPlots,
+                price_per_plot: pricePerPlot,
                 last_transaction_timestamp: tx_count
             };
 
@@ -70,7 +74,6 @@ use starknet::storage::{Map, StorageMapWriteAccess, StorageMapReadAccess};
             self.all_lands.write(self.land_count.read(), new_land);
 
             land_id
-
         }
 
         fn get_lands(ref self: ContractState) -> Array<Land> {
