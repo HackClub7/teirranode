@@ -22,7 +22,10 @@ export default function Home() {
 
   return (
     <main className="min-h-svh text-black bg-[#EFEDE7]">
+      <div className="fixed w-full">
       <Header />
+      </div>
+     
       <div className="flex items-center bg-no-repeat bg-cover"
       // style={{backgroundImage: `url(${landingImage.src})`}}
       >

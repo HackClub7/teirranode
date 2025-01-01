@@ -35,7 +35,7 @@ const Header = () => {
   // }, []);
 
   return (
-    <div className="flex justify-between lg:px-32 px-7 py-3 shadow-xl f w-full fixed">
+    <div className="flex justify-between lg:px-32 px-7 py-3 shadow-xl f w-full">
       <div >
         <Logo />
       </div>
