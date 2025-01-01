@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FiUploadCloud } from "react-icons/fi";
 import Header from "../components/internal/Header";
+import bgImage from "../../../public/assets/global-img.png"
 import { Contract } from "starknet";
 import landAbi from "../Abis/landAbi.json";
 import { useAccount } from "@starknet-react/core";
@@ -12,6 +13,7 @@ const stringToFelt252 = (str: string): string => {
   if (!str) throw new Error("Invalid string input for felt conversion.");
   return "0x" + Buffer.from(str, "utf8").toString("hex");
 };
+
 
 export default function Register() {
   const { account } = useAccount(); 
@@ -116,10 +118,12 @@ export default function Register() {
     }
   };
 
+
+    };
   return (
     <div className="text-black">
       <Header />
-      <div className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover">
+      <div className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover" style={{backgroundImage: `url(${bgImage.src})`}}>
         <div className="w-full">
           <form
             onSubmit={handleRegister}
