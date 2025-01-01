@@ -35,17 +35,15 @@ const Header = () => {
   // }, []);
 
   return (
-    <div className="flex justify-between lg:px-32 px-7 py-5 shadow-xl f w-full"> 
-      <Logo />
-      {/* <div className="self-center">
-        <ul className="flex gap-7 text-sm">
-          <li><Link href={'/'} className="hover:text-[#F65A11]">Dashboard</Link></li>
-          <li><Link href={'/'} className="hover:text-[#F65A11]">Features</Link></li>
-          <li><Link href={'/'} className="hover:text-[#F65A11]">Privacy Policy</Link></li>
-          <li><Link href={'/'} className="hover:text-[#F65A11]">Licensing</Link></li>
-        </ul>
-      </div> */}
-         <ConnectButton />
+    <div className="flex justify-between lg:px-32 px-7 py-3 shadow-xl f w-full fixed">
+      <div >
+        <Logo />
+      </div>
+
+      <div className="self-center">
+        <ConnectButton />
+      </div>
+
       {/* <button className="bg-[#22331D] text-white text-sm py-2 px-3 rounded hover:bg-[#F65A11]">Connect wallet</button> */}
 
     </div>
@@ -78,7 +76,7 @@ const Header = () => {
     //             <MenuButton />
     //           </div>
     //         ) : (
-              // <ConnectButton />
+    // <ConnectButton />
     //         )}
     //         <ThemeSwitch
     //           className="absolute bottom-[-200%] left-3/4 md:grid lg:bottom-[-250%] lg:left-1/2"

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { FiUploadCloud } from "react-icons/fi";
 import Header from "../components/internal/Header";
+import Image from "next/image";
+import bgImage from "../../../public/assets/global-img.png"
 
 export default function Register() {
     // State for input fields
@@ -79,7 +81,8 @@ export default function Register() {
     return (
         <div className="text-black">
             <Header />
-            <div className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover">
+            <div className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-contain" style={{backgroundImage: `url(${bgImage.src})`}}>
+                
                 <div className="w-full">
                     <form
                         onSubmit={handleRegister}
