@@ -33,5 +33,5 @@ pub trait ILandOnboard<TContractState> {
         pricePerPlot: u256
     ) -> u256;
 
-    fn get_lands(ref self: TContractState) -> Array<Land>;
+    fn get_lands(self: @TContractState) -> Array<Land>;
 }

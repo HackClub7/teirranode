@@ -76,7 +76,7 @@ pub mod LandRegistryContract {
             land_id
         }
 
-        fn get_lands(ref self: ContractState) -> Array<Land> {
+        fn get_lands(self: @ContractState) -> Array<Land> {
             let mut lands_array = ArrayTrait::new();
 
             let land_count = self.land_count.read();
