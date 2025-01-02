@@ -19,7 +19,7 @@ const stringToFelt252 = (str: string): string => {
 export default function Register() {
   const { account } = useAccount(); 
   const ContractAddress =
-    "0x011ae184034ebf1cb88c51d9a1be99795c13233406d99ff9f782a2de5f85f60e";
+    "0x04c7a85f15645aebe0a9d742c5b4b0e7af11f41468e7910369f63e3e6bcad564";
   const landContract = account
     ? new Contract(landAbi, ContractAddress, account)
     : null;
@@ -106,7 +106,8 @@ export default function Register() {
           console.log("Transaction confirmed:", receipt);
 
           toast.success("Land registered successfully on the blockchain!");
-          // Reset the form data
+          
+          // Reset the form and file input
           setFormData({ title_id: "", registration_no: "" });
           setFile(null);
         } catch (contractError) {
