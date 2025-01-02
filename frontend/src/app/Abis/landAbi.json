@@ -1,132 +1,132 @@
 [
-    {
-      "type": "impl",
-      "name": "LandOnbaord",
-      "interface_name": "teirranode_contract::interface::land_onboard::ILandOnboard"
-    },
-    {
-      "type": "struct",
-      "name": "core::integer::u256",
-      "members": [
-        {
-          "name": "low",
-          "type": "core::integer::u128"
-        },
-        {
-          "name": "high",
-          "type": "core::integer::u128"
-        }
-      ]
-    },
-    {
-      "type": "enum",
-      "name": "core::bool",
-      "variants": [
-        {
-          "name": "False",
-          "type": "()"
-        },
-        {
-          "name": "True",
-          "type": "()"
-        }
-      ]
-    },
-    {
-      "type": "struct",
-      "name": "teirranode_contract::interface::land_onboard::Land",
-      "members": [
-        {
-          "name": "land_id",
-          "type": "core::integer::u256"
-        },
-        {
-          "name": "owner",
-          "type": "core::starknet::contract_address::ContractAddress"
-        },
-        {
-          "name": "location",
-          "type": "core::felt252"
-        },
-        {
-          "name": "status",
-          "type": "core::bool"
-        },
-        {
-          "name": "title_no",
-          "type": "core::felt252"
-        },
-        {
-          "name": "registration_no",
-          "type": "core::felt252"
-        },
-        {
-          "name": "number_of_plots",
-          "type": "core::integer::u32"
-        },
-        {
-          "name": "price_per_plot",
-          "type": "core::integer::u256"
-        },
-        {
-          "name": "last_transaction_timestamp",
-          "type": "core::integer::u256"
-        }
-      ]
-    },
-    {
-      "type": "interface",
-      "name": "teirranode_contract::interface::land_onboard::ILandOnboard",
-      "items": [
-        {
-          "type": "function",
-          "name": "register_land",
-          "inputs": [
-            {
-              "name": "landLocation",
-              "type": "core::felt252"
-            },
-            {
-              "name": "numberOfPlots",
-              "type": "core::integer::u32"
-            },
-            {
-              "name": "titleDeed",
-              "type": "core::felt252"
-            },
-            {
-              "name": "registrationNumber",
-              "type": "core::felt252"
-            },
-            {
-              "name": "pricePerPlot",
-              "type": "core::integer::u256"
-            }
-          ],
-          "outputs": [
-            {
-              "type": "core::integer::u256"
-            }
-          ],
-          "state_mutability": "external"
-        },
-        {
-          "type": "function",
-          "name": "get_lands",
-          "inputs": [],
-          "outputs": [
-            {
-              "type": "core::array::Array::<teirranode_contract::interface::land_onboard::Land>"
-            }
-          ],
-          "state_mutability": "external"
-        }
-      ]
-    },
-    {
-      "type": "event",
-      "name": "teirranode_contract::land_onboard::LandRegistryContract::Event",
-      "kind": "enum",
-      "variants": []
-    }
-  ]
+  {
+    "type": "impl",
+    "name": "LandOnbaord",
+    "interface_name": "teirranode_contract::interface::land_onboard::ILandOnboard"
+  },
+  {
+    "type": "struct",
+    "name": "core::integer::u256",
+    "members": [
+      {
+        "name": "low",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "high",
+        "type": "core::integer::u128"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "core::bool",
+    "variants": [
+      {
+        "name": "False",
+        "type": "()"
+      },
+      {
+        "name": "True",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "teirranode_contract::interface::land_onboard::Land",
+    "members": [
+      {
+        "name": "land_id",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "location",
+        "type": "core::felt252"
+      },
+      {
+        "name": "status",
+        "type": "core::bool"
+      },
+      {
+        "name": "title_no",
+        "type": "core::felt252"
+      },
+      {
+        "name": "registration_no",
+        "type": "core::felt252"
+      },
+      {
+        "name": "number_of_plots",
+        "type": "core::integer::u32"
+      },
+      {
+        "name": "price_per_plot",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "last_transaction_timestamp",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "teirranode_contract::interface::land_onboard::ILandOnboard",
+    "items": [
+      {
+        "type": "function",
+        "name": "register_land",
+        "inputs": [
+          {
+            "name": "landLocation",
+            "type": "core::felt252"
+          },
+          {
+            "name": "numberOfPlots",
+            "type": "core::integer::u32"
+          },
+          {
+            "name": "titleDeed",
+            "type": "core::felt252"
+          },
+          {
+            "name": "registrationNumber",
+            "type": "core::felt252"
+          },
+          {
+            "name": "pricePerPlot",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::integer::u256"
+          }
+        ],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "get_lands",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::array::Array::<teirranode_contract::interface::land_onboard::Land>"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "teirranode_contract::land_onboard::LandRegistryContract::Event",
+    "kind": "enum",
+    "variants": []
+  }
+]
