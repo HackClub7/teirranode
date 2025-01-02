@@ -6,7 +6,7 @@ use starknet::ContractAddress;
 pub struct Land {
     pub land_id: u256,
     pub owner: ContractAddress,
-    pub location: LandCoordinate,
+    pub location: felt252,
     pub status: bool,
     pub title_no: felt252,
     pub registration_no: felt252,
@@ -26,7 +26,7 @@ pub struct LandCoordinate {
 pub trait ILandOnboard<TContractState> {
     fn register_land(
         ref self: TContractState,
-        landLocation: LandCoordinate,
+        landLocation: felt252,
         numberOfPlots: u32,
         titleDeed: felt252,
         registrationNumber: felt252,

@@ -7,15 +7,15 @@ pub mod LandRegistryContract {
     use starknet::{
         get_caller_address, get_contract_address, get_block_timestamp, ContractAddress, get_tx_info
     };
-    use crate::interface::land_onboard::{ILandOnboard, Land, LandCoordinate};
+    use crate::interface::land_onboard::{ILandOnboard, Land};
     use core::poseidon::PoseidonTrait;
     use core::hash::{HashStateTrait, HashStateExTrait};
 
 
-    pub fn create_land_id(caller: ContractAddress, location: LandCoordinate) -> u256 {
+    pub fn create_land_id(caller: ContractAddress, location: felt252) -> u256 {
         let caller_hash = PoseidonTrait::new().update_with(caller).finalize();
         let location_hash = PoseidonTrait::new()
-            .update_with(location.latitude + location.longitude)
+            .update_with(location)
             .finalize();
 
         let felt_land_id = caller_hash + location_hash;
@@ -41,7 +41,7 @@ pub mod LandRegistryContract {
     impl LandOnbaord of ILandOnboard<ContractState> {
         fn register_land(
             ref self: ContractState,
-            landLocation: LandCoordinate,
+            landLocation: felt252,
             numberOfPlots: u32,
             titleDeed: felt252,
             registrationNumber: felt252,
