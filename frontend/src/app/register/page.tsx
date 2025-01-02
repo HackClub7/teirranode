@@ -2,18 +2,19 @@
 import { useState } from "react";
 import { FiUploadCloud } from "react-icons/fi";
 import Header from "../components/internal/Header";
-import bgImage from "../../../public/assets/global-img.png"
+import bgImage from "../../../public/assets/global-img.png";
 import { Contract } from "starknet";
 import landAbi from "../Abis/landAbi.json";
 import { useAccount } from "@starknet-react/core";
 import ConnectButton from "../components/lib/Connect";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Utility function to convert a string to felt252
 const stringToFelt252 = (str: string): string => {
   if (!str) throw new Error("Invalid string input for felt conversion.");
   return "0x" + Buffer.from(str, "utf8").toString("hex");
 };
-
 
 export default function Register() {
   const { account } = useAccount(); 
@@ -50,13 +51,13 @@ export default function Register() {
     e.preventDefault();
 
     if (!account) {
-      alert("Please connect your wallet to register the land.");
+      toast.error("Please connect your wallet to register the land.");
       return;
     }
 
     const { title_id, registration_no } = formData;
     if (!title_id || !registration_no) {
-      alert("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       return;
     }
 
@@ -66,6 +67,7 @@ export default function Register() {
         headers: {
           "Content-Type": "application/json",
         },
+        mode: "cors",
         body: JSON.stringify({ title_id, registration_no }),
       });
 
@@ -76,7 +78,7 @@ export default function Register() {
           data.details;
 
         if (!location || !plot || !price_per_plot || !registration_no || !title_id) {
-          alert("Invalid data received from the server.");
+          toast.error("Invalid data received from the server.");
           return;
         }
 
@@ -87,10 +89,9 @@ export default function Register() {
         const pricePerPlot = BigInt(price_per_plot.replace("$", ""));
 
         try {
-
-            if (!landContract) {
-                throw new Error("Land contract is not initialized. Please connect your wallet.");
-              }
+          if (!landContract) {
+            throw new Error("Land contract is not initialized. Please connect your wallet.");
+          }
           const tx = await landContract.register_land(
             landLocation,
             numberOfPlots,
@@ -104,24 +105,31 @@ export default function Register() {
           const receipt = await account.waitForTransaction(tx.transaction_hash);
           console.log("Transaction confirmed:", receipt);
 
-          alert("Land registered successfully on the blockchain!");
+          toast.success("Land registered successfully on the blockchain!");
+          // Reset the form data
+          setFormData({ title_id: "", registration_no: "" });
+          setFile(null);
         } catch (contractError) {
           console.error("Error interacting with the contract:", contractError);
-          alert("Failed to write to the blockchain.");
+          toast.error("Failed to write to the blockchain.");
         }
       } else {
-        alert("Failed to verify land. Please check your inputs.");
+        toast.error("Failed to verify land. Please check your inputs.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred during form submission. Please try again.");
+      toast.error("An error occurred during form submission. Please try again.");
     }
   };
 
   return (
     <div className="text-black">
       <Header />
-      <div className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover" style={{backgroundImage: `url(${bgImage.src})`}}>
+      <ToastContainer />
+      <div
+        className="min-h-svh xl:px-40 lg:px-32 px-10 flex items-center bg-[#EFEDE7] bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${bgImage.src})` }}
+      >
         <div className="w-full">
           <form
             onSubmit={handleRegister}
@@ -207,4 +215,4 @@ export default function Register() {
       </div>
     </div>
   );
-} 
+}
