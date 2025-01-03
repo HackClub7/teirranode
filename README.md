@@ -1,65 +1,87 @@
+# TIERRANODE: A DECENTRALIZED LAND REGISTRY PLATFORM
 
- # A DECENTRALIZED LAND REGISTRY PLATFORM (TEIRRANODE)
-# Motivation
-The current state of land ownership in Nigeria, particularly in Plateau State, is marred by widespread fraud, inefficiencies and lack of transparency. Land grabbing, fraudulent sales and double issuance of land certificates have created a trust deficit between landowners, buyers and local authorities. This project is motivated by the pressing need to solve these issues and improve the overall efficiency and security of land transactions in Nigeria.
+## 🚀 Motivation
+Land ownership in Nigeria, particularly in Plateau State, is plagued by:
+- **Fraudulent sales** and **land grabbing.**
+- **Double issuance** of certificates leading to conflicting ownership claims.
+- **Lack of transparency** and accessible records.
+- **Inefficiencies** in manual, bureaucratic land transaction processes.
 
-With over 60% of court cases in Nigeria linked to land disputes, the project aims to address the following key problems:
+Tierranode is motivated by the need to address these challenges. With **60% of court cases in Nigeria linked to land disputes**, Tierranode offers a **decentralized, transparent, and efficient solution** to mitigate fraud, streamline transactions, and foster trust in land ownership systems.
 
-Land Grabbing & Fraud: Fraudulent sales and illegal land acquisition are rampant due to unregulated processes.
-Double Issuance of Certificates: Multiple land certificates issued for the same property have caused conflicting ownership claims.
-Lack of Transparency: The absence of a publicly accessible, immutable record of land transactions makes it difficult for buyers to make informed decisions.
-Inefficient Land Transactions: Manual and bureaucratic processes slow down land transfers, increasing risks of corruption and delays.
-Solution
-The Decentralized Land Registry leverages blockchain technology to create a transparent, secure and immutable record of land transactions. This platform ensures that landowners, buyers and local authorities can interact within a trustless environment, reducing the incidence of fraud and land-related disputes.
+---
 
-# Key features of the solution include:
-Blockchain-Based Registration: Landowners can register their land on the blockchain, ensuring authenticity and immutability of records.
-NFT Minting for Land: Each registered land parcel is minted as a Non-Fungible Token (NFT), representing proof of ownership.
-Partial and Full Land Sale: Landowners can sell either their entire property or fractions of it, with the corresponding portion of the NFT transferred to the buyer.
-Ownership Transfer History: A detailed ownership history, including sales prices and land appreciation, is stored on the blockchain, making it easy for buyers to access accurate land records.
-Real-Time Land Valuation: The platform dynamically updates land prices based on market conditions and sales history, ensuring buyers and sellers have access to up-to-date valuations.
-Benefits
-This solution brings significant improvements to the current land ownership system:
+## 🌟 Solution
+Tierranode leverages **Starknet** and **Calimero** to create a **privacy-centric decentralized platform** for managing land ownership, ensuring:
+1. **Transparency** through immutable blockchain-based records.
+2. **Security** via escrow-enabled smart contracts.
+3. **Efficiency** in automated and dispute-free transactions.
 
-Increased Transparency: The decentralized nature of blockchain ensures that all transactions are public, tamper-proof and immutable, fostering trust between parties.
-Secure Transactions: Smart contracts ensure that funds are held in escrow until all conditions of the sale are met, reducing the risk of fraud.
-Efficient Land Transfers: Automated processes within the smart contracts streamline land transactions, significantly reducing the time and cost involved in land transfers.
-Improved Record Maintenance: Ownership records are stored permanently on the blockchain, reducing the risk of disputes caused by lost or altered documents.
-Market Growth: A transparent and efficient land registry system supports economic growth by promoting real estate development and boosting investor confidence.
-teirranode Implementation:
-The decentralized land registry system is a combination of cutting-edge blockchain technology, legal collaboration and user-friendly design. Below is an outline of how the project is implemented step-by-step:
+### **Key Features**
+- **Blockchain-Based Registration**  
+  Land details are registered on Starknet using Cairo smart contracts, ensuring data authenticity and immutability.
+  
+- **NFT Minting for Land**  
+  Each land parcel is represented as an NFT, serving as proof of ownership and enabling seamless transfer.
 
-Smart Contract Development Using Cairo on the Starknet blockchain, smart contracts manage land registration, sales and ownership transfers. These contracts:
-Register land details and mint NFTs that represent land ownership.
-Handle secure escrow-based payments and transfer ownership (NFTs) once payment conditions are met.
-Record full transaction histories and land appreciation data on the blockchain.
-The key advantage of smart contracts is their automatic, tamper-proof nature, ensuring transparent and secure transactions without intermediaries.
+- **Partial and Full Sales**  
+  Landowners can sell entire plots or fractions of their land, with proportional NFT transfers.
 
-NFT Technology for Land Each registered parcel of land is minted as an NFT (Non-Fungible Token), which serves as proof of ownership. The NFTs contain metadata detailing land ownership, title deed, location, and size. They are transferred upon sale, either partially (in cases where part of the land is sold) or in full.
-NFTs provide a secure and unique digital representation of land, making ownership easily transferable and verifiable on the blockchain.
+- **Ownership Transfer History**  
+  A detailed, immutable history of ownership, sales, and land appreciation is maintained on-chain.
 
-Decentralized Storage and Data Security and privacy of Land documents (such as survey plans, title deeds, etc.) are securely stored using  calimero strong  encryption which is The peer interactions inside the Self-Sovereign Apps are encrypted and protected from any unauthorized third parties.
-Calimero is designed to be a general-purpose compute engine that can be used to build a wide variety of applications. Also worth noting that Calimero does offer a way to store encrypted data, effectively making it a storage solution as well.
+- **Real-Time Land Valuation**  
+  Smart contracts dynamically update valuations based on sales history and market conditions.
 
-User-Friendly Interface A web-based platform developed using Next.js, providing an intuitive interface for landowners and buyers. The front-end enables users to:
-Register and verify land details.
-List land for sale, view historical ownership and interact with land records.
-Initiate and complete secure transactions through integration with Starknet wallets (e.g., Argent Wallet).
-The front-end connects to the Starknet blockchain via Starknet.js, enabling seamless interaction with smart contracts for land registration, sales and ownership transfers.
-Legal Integration Collaboration with local land management authorities and legal bodies ensures that the decentralized system adheres to Nigeria's existing land laws. By working together with government agencies, the platform:
-Validates land registration and ownership credentials.
-Ensures that NFTs minted on the blockchain correspond with legally recognized land titles.
-Establishes legal frameworks for dispute resolution and the enforcement of smart contract terms.
-Building these legal bridges ensures that the platform is trusted and can be adopted on a large scale.
-Scalability and Rollout The system is tested to handle various real-world scenarios, including land subdivision, partial sales and complex ownership histories. A phased rollout strategy is used:
-Pilot Phase: Initial deployment in a few regions of Plateau State to gather feedback, resolve bugs, and assess real-world viability.
-Scaling Phase: Expansion to other states in Nigeria, with continuous optimization based on feedback and growing user adoption.
-By leveraging the scalability of blockchain, this platform is capable of managing land transactions across the entire country.
+- **Privacy-Centric Data Storage**  
+  Sensitive documents (e.g., title deeds) are securely encrypted and stored using Calimero.
 
-# Tech Stack
-Backend: node.js and express.js.
-Frontend: Next.js, tailwindcss for a user-friendly interface.
-Blockchain Interaction: Starknet.js to connect with the Starknet network.
-Storage: calimero for decentralized document storage and privacy.
-This project is fully achievable through a combination of blockchain technology, user-centric design and legal partnerships. By addressing Nigeria’s pressing land ownership challenges with a secure, transparent and efficient system, this solution paves the way for reliable land transactions and increased trust in the real estate market.
+---
 
+## 🎯 Benefits
+1. **Increased Transparency:** Public, tamper-proof records build trust among parties.  
+2. **Enhanced Security:** Escrow-based transactions mitigate fraud risks.  
+3. **Efficient Processes:** Automation reduces delays and costs associated with manual bureaucracy.  
+4. **Immutable Records:** Permanent blockchain storage ensures reliable ownership data.  
+5. **Economic Growth:** A transparent system boosts confidence in real estate markets.
+
+---
+
+## 🔧 Implementation
+
+### **1. Smart Contracts (Cairo)**
+- Manage **land registration, sales, and transfers** on the Starknet blockchain.
+- Automatically enforce **secure escrow payments** and ownership transfer conditions.
+- Record detailed transaction histories and land appreciation data.
+
+### **2. NFT-Based Land Ownership**
+- Each parcel is minted as an **NFT** with metadata (owner, size, location, title deed, etc.).
+- NFTs enable **full or partial transfers**, making ownership easily verifiable and tamper-proof.
+
+### **3. Privacy-Centric Data Storage (Calimero)**
+- Sensitive documents (e.g., survey plans) are **encrypted** and stored using **Calimero SDK**.
+- Calimero ensures **peer-to-peer secure interactions** within self-sovereign apps.
+
+### **4. User-Friendly Interface**
+- A web-based platform built with **Next.js** and styled with **TailwindCSS**.  
+- Features include:
+  - Land registration and verification.
+  - Historical ownership views.
+  - Secure transaction initiation with **Starknet wallets** (e.g., Argent Wallet).
+
+### **5. Legal Framework**
+- Collaborations with local authorities ensure compliance with Nigeria's land laws.
+- Legal integration ensures trust and adoption at scale.
+
+---
+
+## 📚 Calimero Integration
+
+### **Starknet Integration**
+- Utilize **Starknet.js** for connecting the front end to Starknet smart contracts.
+- Leverage **Cairo SDK** to write and deploy efficient, scalable smart contracts.
+
+#### **Starknet Setup Guide**
+1. Install **Starknet.js**:
+   ```bash
+   npm install starknet
