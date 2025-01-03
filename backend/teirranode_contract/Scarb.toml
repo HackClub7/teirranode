@@ -48,3 +48,8 @@ test = "snforge test"
 
 # [features]                                                 # Used for conditional compilation
 # enable_for_tests = []                                      # Feature name and list of other features that should be enabled with it
+
+[context.config.new]
+protocol = "starknet"
+network = "sepolia"
+contract_id = "0x4c7a85f15645aebe0a9d742c5b4b0e7af11f41468e7910369f63e3e6bcad564"
