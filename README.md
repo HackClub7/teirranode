@@ -21,7 +21,7 @@ Real-Time Land Valuation: The platform dynamically updates land prices based on 
 Benefits
 This solution brings significant improvements to the current land ownership system:
 
-Increased Transparency: The decentralized nature of blockchain ensures that all transactions are public, tamper-proof, and immutable, fostering trust between parties.
+Increased Transparency: The decentralized nature of blockchain ensures that all transactions are public, tamper-proof and immutable, fostering trust between parties.
 Secure Transactions: Smart contracts ensure that funds are held in escrow until all conditions of the sale are met, reducing the risk of fraud.
 Efficient Land Transfers: Automated processes within the smart contracts streamline land transactions, significantly reducing the time and cost involved in land transfers.
 Improved Record Maintenance: Ownership records are stored permanently on the blockchain, reducing the risk of disputes caused by lost or altered documents.
@@ -59,7 +59,7 @@ By leveraging the scalability of blockchain, this platform is capable of managin
 # Tech Stack
 Backend: node.js and express.js.
 Frontend: Next.js, tailwindcss for a user-friendly interface.
-Blockchain Interaction: Starknet.js to connect with the Starknet.js network.
+Blockchain Interaction: Starknet.js to connect with the Starknet network.
 Storage: calimero for decentralized document storage and privacy.
 This project is fully achievable through a combination of blockchain technology, user-centric design and legal partnerships. By addressing Nigeria’s pressing land ownership challenges with a secure, transparent and efficient system, this solution paves the way for reliable land transactions and increased trust in the real estate market.
 
