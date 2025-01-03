@@ -1,0 +1,12 @@
+/Users/bankat/Documents/cairo/teirranode/backend/logic/target/debug/deps/libborsh-2315c88d62be3380.rmeta: /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/lib.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/hint.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/helpers.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/error.rs
+
+/Users/bankat/Documents/cairo/teirranode/backend/logic/target/debug/deps/libborsh-2315c88d62be3380.rlib: /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/lib.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/hint.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/helpers.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/error.rs
+
+/Users/bankat/Documents/cairo/teirranode/backend/logic/target/debug/deps/borsh-2315c88d62be3380.d: /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/lib.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/hint.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/mod.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/helpers.rs /Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/error.rs
+
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/lib.rs:
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/mod.rs:
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/de/hint.rs:
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/mod.rs:
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/ser/helpers.rs:
+/Users/bankat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/borsh-1.5.3/src/error.rs:
