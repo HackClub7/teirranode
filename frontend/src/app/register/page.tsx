@@ -9,6 +9,13 @@ import { useAccount } from "@starknet-react/core";
 import ConnectButton from "../components/lib/Connect";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { JsonRpcClient } from "@calimero-is-near/calimero-p2p-sdk";
+
+const NODE_URL = "http://localhost:2429/jsonrpc"; // Calimero Node URL
+const CONTEXT_ID = "AcFybKeKytnKr4BPmE349H8ijWp5xJv1sP9srDxTRccP";
+const APP_ID = "64yVxd81mm4KuwtvpuCqQbqs8odjtcWcLapkhLgW9Sr4";
+
+const rpcClient = new JsonRpcClient(process.env["NEXT_PUBLIC_API_URL"] ?? "http://localhost:2429", "/jsonrpc");
 
 // Utility function to convert a string to felt252
 const stringToFelt252 = (str: string): string => {
@@ -92,6 +99,19 @@ export default function Register() {
           if (!landContract) {
             throw new Error("Land contract is not initialized. Please connect your wallet.");
           }
+
+          await rpcClient.mutate({
+            applicationId: process.env["NEXT_PUBLIC_APPLICATION_ID"] ?? APP_ID,
+            method: "register_land",
+            argsJson: { 
+              landLocation,
+              numberOfPlots,
+              tittleDeed,
+              registrationNumber,
+              pricePerPlot
+             },
+          });
+
           const tx = await landContract.register_land(
             landLocation,
             numberOfPlots,
